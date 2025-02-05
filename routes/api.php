@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PostController;
 use Illuminate\Support\Facades\Route;
 
 // Auth routes
@@ -28,4 +29,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/{token_id}/revoke', [AuthController::class, 'revokeToken']);
         Route::post('/revoke-all-except-current', [AuthController::class, 'revokeOtherTokens']);
     });
+});
+
+// Post routes
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::apiResource('posts', PostController::class);
+    Route::post('posts/{post}/like', [PostController::class, 'like']);
 });
