@@ -18,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->append([
             \App\Http\Middleware\TrackLastActiveToken::class,
+            \App\Http\Middleware\Cors::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
