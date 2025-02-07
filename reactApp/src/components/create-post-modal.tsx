@@ -65,7 +65,7 @@ export default function CreatePostModal() {
       </DialogTrigger>
       <AnimatePresence>
         {open && (
-          <DialogContent className="sm:max-w-[600px] rounded-3xl border-none bg-white/80 backdrop-blur-xl p-0">
+          <DialogContent className="sm:max-w-[600px] rounded-3xl border-none bg-white backdrop-blur-xl p-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function CreatePostModal() {
                         <FormItem>
                           <FormLabel>Title</FormLabel>
                           <FormControl>
-                            <Input 
+                            <Input
                               placeholder="Enter your post title"
                               className="rounded-xl"
                               {...field}
@@ -102,7 +102,7 @@ export default function CreatePostModal() {
                       )}
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -126,7 +126,7 @@ export default function CreatePostModal() {
                       )}
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -153,7 +153,7 @@ export default function CreatePostModal() {
                       )}
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -169,8 +169,8 @@ export default function CreatePostModal() {
                     >
                       Cancel
                     </Button>
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       disabled={isSubmitting}
                       className="rounded-xl bg-gradient-to-r from-primary to-purple-600"
                     >
