@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ->each(function ($user) {
                 // Random number of posts between 3 and 10
                 $numPosts = rand(3, 10);
-                
+
                 // Blog post topics for realistic titles
                 $topics = [
                     'Tech' => [
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
                         'Building Your Developer Portfolio',
                         'Navigating Your Tech Career Path',
                         'Soft Skills in Software Development',
-                    ]
+                    ],
                 ];
 
                 for ($i = 0; $i < $numPosts; $i++) {
@@ -65,22 +65,22 @@ class DatabaseSeeder extends Seeder
     {
         // Simulate rich text editor content with HTML
         $faker = \Faker\Factory::create();
-        
-        $content = "<h2>" . $faker->sentence(6) . "</h2>\n\n";
-        
+
+        $content = '<h2>'.$faker->sentence(6)."</h2>\n\n";
+
         // Introduction paragraph
-        $content .= "<p>" . $faker->paragraph(3) . "</p>\n\n";
-        
+        $content .= '<p>'.$faker->paragraph(3)."</p>\n\n";
+
         // Main content with subheadings
         for ($i = 0; $i < 3; $i++) {
-            $content .= "<h3>" . $faker->sentence(4) . "</h3>\n\n";
-            $content .= "<p>" . $faker->paragraph(4) . "</p>\n\n";
-            
+            $content .= '<h3>'.$faker->sentence(4)."</h3>\n\n";
+            $content .= '<p>'.$faker->paragraph(4)."</p>\n\n";
+
             // Add a list sometimes
             if ($faker->boolean(70)) {
                 $content .= "<ul>\n";
                 for ($j = 0; $j < 4; $j++) {
-                    $content .= "    <li>" . $faker->sentence(6) . "</li>\n";
+                    $content .= '    <li>'.$faker->sentence(6)."</li>\n";
                 }
                 $content .= "</ul>\n\n";
             }
@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
 
         // Conclusion
         $content .= "<h3>Conclusion</h3>\n\n";
-        $content .= "<p>" . $faker->paragraph(3) . "</p>\n\n";
+        $content .= '<p>'.$faker->paragraph(3)."</p>\n\n";
 
         return $content;
     }
