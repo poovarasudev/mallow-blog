@@ -15,6 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+
+        \URL::forceScheme('https');
+
         if (! app()->isProduction()) {
             // Preventing (N+1) Query and Lazy Loading when app is not in production.
             Model::preventLazyLoading();
