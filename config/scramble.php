@@ -76,9 +76,7 @@ return [
      * ],
      * ```
      */
-    'servers' => [
-        'Local' => 'https://blog.techzilla.site',
-    ],
+    'servers' => null,
 
     'middleware' => [
         'web',
